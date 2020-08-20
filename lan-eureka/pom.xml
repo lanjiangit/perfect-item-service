@@ -12,12 +12,22 @@
     <artifactId>lan-eureka</artifactId>
     <version>1.0.0</version>
     <name>lan-eureka</name>
+    <packaging>jar</packaging>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+        <nexus.host>172.16.129.240:8081</nexus.host>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>maven-kmsd</id>
+            <name>kmsd Private maven Repository</name>
+            <url>http://${nexus.host}/repository/maven-kmsd/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
